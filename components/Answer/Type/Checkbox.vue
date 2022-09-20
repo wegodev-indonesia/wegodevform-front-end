@@ -26,7 +26,6 @@ export default {
     methods: {
         async update() {
             try {
-                console.log(this.answerRule)
                 let payload = {
                     questionId: this.question.id,
                     value: this.answer,

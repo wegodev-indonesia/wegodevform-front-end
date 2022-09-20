@@ -62,7 +62,6 @@ export default {
                     this.$store.commit('questions/set', response.form.questions)
                 }
             } catch (err) {
-                console.log(err.response)
                 if (err.response) {
                     this.$nuxt.error({
                         statusCode: err.response.status,
