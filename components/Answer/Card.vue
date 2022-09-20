@@ -92,9 +92,7 @@ export default {
                     await this.$store.dispatch('answers/store', this.formId)
 
                     //redirect to completed
-                    this.$router.push({
-                        name: `answers-completed___${this.$i18n.locale}`,
-                    })
+                    this.$router.push('/answers/completed')
                 }
             } catch (err) {
                 this.$store.commit('alerts/show', {
