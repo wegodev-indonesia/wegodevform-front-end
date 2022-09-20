@@ -1,0 +1,48 @@
+html, body{
+    padding: 0;
+    background: #e2e8f1;
+}
+
+.v-btn{
+    text-transform: none !important;
+}
+
+.btn-no-height{
+    height: 0px !important;
+}
+
+.btn-auth{
+    font-size: 1rem !important;
+}
+
+/* CARD BORDER */
+    .card-border-top{
+        border-top: 0.5rem solid #1976d2 !important;
+    }
+    
+    .card-border-left{
+        border-left: 0.5rem solid transparent !important;
+    }
+
+    .card-border-left.active{
+        border-color: #1976d2 !important;
+    }
+
+/* LOADING */
+    .spin-loading{
+        animation: spin 1s infinite;
+    }
+
+    @keyframes spin{
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+    }
+
+/* INPUT */
+    .creator-input > .v-input__control > .v-input__slot:before {
+        border-color: transparent !important;
+    }

@@ -1,0 +1,31 @@
+{
+    "FIELD_REQUIRED": "{field} harus di isi",
+    "FIELD_MIN": "{field} minimal {min} karakter",
+    "FIELD_CONFIRM": "Isi {confirm} tidak sama dengan {field}",
+    "EMAIL_INVALID": "Format email tidak valid",
+    "EMAIL_EXIST": "Email sudah terdaftar",
+    
+    "QUESTION_REQUIRED": "Pertanyaan ini harus di isi",
+
+    "CREATE_SUCCESS": "Membuat data {title} berhasil",
+    "UPDATE_SUCCESS": "Mengganti data {title} berhasil",
+    "DELETE_SUCCESS": "Berhasil menghapus data {title}",
+    "ID_NOT_FOUND": "ID tidak di temukan",
+ 
+    "AUTH_REQUIRED": "Untuk mengakses halaman tersebut anda harus login",
+    "EMAIL_NOT_FOUND": "Email tidak di temukan",
+    "WRONG_PASSWORD": "Password yang anda masukan salah",
+
+    "SAVE_PROCESS": "Sedang menyimpan data...",
+    "SAVE_SUCCESS": "Berhasil menyimpan data",
+    "SAVE_FAILED": "Gagal menyimpan data",
+
+    "NO_DATA_YET": "Belum ada data {title}",
+
+    "404_NOT_FOUND": "Halaman tidak di temukan",
+
+    "FORM_NOT_FOUND": "ID tidak di temukan",
+    "INVALID_ID": "ID tidak valid",
+    "REQUEST_FAILED": "Server gagal memproses permintaan",
+    "SERVER_ERROR": "Server sedang mengalami gangguan"
+}
