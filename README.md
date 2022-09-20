@@ -16,6 +16,10 @@ $ npm run start
 
 ## Deskripsi
 
+### `env file`
+
+Rename `sample.env` menjadi `.env`, kemudian sesuaikan settingan sesuai dengan pc/server kamu
+
 ### `courses`
 
 Untuk belajar membuat aplikasi wegodevform dari awal kamu dapat mengikuti course di [wegodev.com](https://wegodev.com) 
