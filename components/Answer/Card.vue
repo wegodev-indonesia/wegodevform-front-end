@@ -19,6 +19,11 @@
                                     v-if="question.type == 'Text'"
                                     :question="question"
                                 />
+                                <AnswerTypeEmail
+                                    class="mb-4"
+                                    v-if="question.type == 'Email'"
+                                    :question="question"
+                                />
                                 <AnswerTypeDropdown
                                     class="mb-4"
                                     v-if="question.type == 'Dropdown'"

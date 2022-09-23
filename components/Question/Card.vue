@@ -32,6 +32,10 @@
                                     class="mb-4"
                                     v-if="question.type == 'Text'"
                                 />
+                                <QuestionTypeEmail
+                                    class="mb-4"
+                                    v-else-if="question.type == 'Email'"
+                                />
                                 <QuestionTypeRadio
                                     v-else-if="question.type == 'Radio'"
                                     :formId="formId"

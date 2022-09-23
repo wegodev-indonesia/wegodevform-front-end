@@ -25,10 +25,8 @@ export default {
             type: this.question.type,
             items: [
                 { value: 'Text', icon: 'mdi-text-short' },
-                {
-                    value: 'Dropdown',
-                    icon: 'mdi-arrow-down-drop-circle-outline',
-                },
+                { value: 'Email', icon: 'mdi-text-short' },
+                { value: 'Dropdown', icon: 'mdi-arrow-down-drop-circle-outline',},
                 { value: 'Checkbox', icon: 'mdi-check-circle-outline' },
                 { value: 'Radio', icon: 'mdi-adjust' },
             ],
