@@ -15,9 +15,7 @@ export default {
         return {
             timer: null,
             answer: null,
-            answerRule: [
-                (v) => /.+@.+/.test(v) || this.$t('EMAIL_INVALID'),
-            ],
+            answerRule: [],
         }
     },
     methods: {
@@ -47,6 +45,7 @@ export default {
     beforeMount() {
         if (this.question.required) {
             this.answerRule.push((v) => !!v || this.$t('QUESTION_REQUIRED'))
+            this.answerRule.push((v) => /.+@.+/.test(v) || this.$t('EMAIL_INVALID'))
         }
     },
 }
