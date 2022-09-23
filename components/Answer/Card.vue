@@ -1,7 +1,13 @@
 <template>
     <v-form v-if="questions.length > 0" ref="form">
+        <v-row v-if="answerError">
+            <v-col md="8" offset-md="2" sm="10" offset-sm="1" class="pb-0">
+                <v-alert dark class="mb-0" color="red">{{ $t('ANSWER_ERROR') }}</v-alert>
+            </v-col>
+        </v-row>
+
         <v-row v-for="(question, index) in questions" :key="index">
-            <v-col color="white" md="8" offset-md="2" sm="10" offset-sm="1">
+            <v-col md="8" offset-md="2" sm="10" offset-sm="1">
                 <v-card>
                     <v-card-text class="pb-0">
                         <v-row>
@@ -65,6 +71,11 @@ import { mapState } from 'vuex'
 export default {
     middleware: ['authenticated'],
     props: ['formId'],
+    data() {
+        return {
+            answerError: false,
+        }
+    },
     computed: {
         ...mapState('questions', ['questions']),
     },
@@ -98,6 +109,10 @@ export default {
 
                     //redirect to completed
                     this.$router.push('/answers/completed')
+                } else {
+                    this.answerError = true
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
                 }
             } catch (err) {
                 this.$store.commit('alerts/show', {
