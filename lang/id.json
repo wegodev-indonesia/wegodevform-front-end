@@ -6,6 +6,7 @@
     "EMAIL_EXIST": "Email sudah terdaftar",
     
     "QUESTION_REQUIRED": "Pertanyaan ini harus di isi",
+    "ANSWER_ERROR": "Isi semua field dengan benar",
 
     "CREATE_SUCCESS": "Membuat data {title} berhasil",
     "UPDATE_SUCCESS": "Mengganti data {title} berhasil",
