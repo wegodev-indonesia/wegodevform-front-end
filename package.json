@@ -15,6 +15,7 @@
     "dotenv": "^16.0.2",
     "jwt-decode": "^3.1.2",
     "nuxt": "^2.15.7",
+    "vue-google-charts": "^1.1.0",
     "vuetify": "^2.5.5",
     "vuex-persistedstate": "^4.1.0"
   },
