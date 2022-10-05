@@ -11,7 +11,7 @@
                         </v-row>
 
                         <v-row class="mt-0">
-                            <v-col cols="12">
+                            <v-col cols="12" v-if="summary.answers.length > 0">
                                 <GChart
                                     v-if="summary.type == 'Text' || summary.type == 'Email'"
                                     type="ColumnChart"
@@ -32,6 +32,9 @@
                                     type="BarChart"
                                     :data="groupCheckbox(summary.answers)"
                                 />
+                            </v-col>
+                            <v-col cols="12" v-else>
+                                <p class="text-center">Belum ada response</p>
                             </v-col>
                         </v-row>
                     </v-card-text>
@@ -65,6 +68,7 @@ export default {
     methods: {
         group(answers) {
             let gChart = []
+
             let groupingByValue =  answers.reduce((acc, answer) => {
                 //skip empty answers
                 if(answer == null || answer == '') {
@@ -90,6 +94,7 @@ export default {
         },
         groupCheckbox(answers) {
             let gChart = []
+
             let groupingByValue =  answers.flat().reduce((acc, answer) => {
                  //skip empty answers
                 if(answer == null || answer == '') {

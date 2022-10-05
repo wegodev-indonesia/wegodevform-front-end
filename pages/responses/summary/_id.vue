@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class="pa-0" v-if="formId">
+    <v-container fluid class="pa-0 mb-5" v-if="formId">
         <Toolbar class="mb-5" />
 
         <v-container fluid>
