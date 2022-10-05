@@ -45,7 +45,7 @@ export default {
             })
         },
         setItems(){
-            this.items = this.responses.answers
+            this.items = this.responses.form.answers
         }
     },
     mounted() {
