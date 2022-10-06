@@ -28,5 +28,9 @@
     "FORM_NOT_FOUND": "ID tidak di temukan",
     "INVALID_ID": "ID tidak valid",
     "REQUEST_FAILED": "Server gagal memproses permintaan",
-    "SERVER_ERROR": "Server sedang mengalami gangguan"
+    "SERVER_ERROR": "Server sedang mengalami gangguan",
+
+    "CANNOT_INVITE_YOUR_SELF": "Anda tidak bisa mengundang diri anda sendiri",
+    "EMAIL_INVITED": "Email sudah pernah di undang",
+    "ADD_INVITE_FAILED": "Mengirim undangan gagal"
 }

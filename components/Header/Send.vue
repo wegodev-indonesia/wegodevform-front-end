@@ -8,29 +8,40 @@
                 <span class="text-h5">Share Form</span>
             </v-card-title>
             <v-card-text>
-                <v-container>
-                    <v-row>
-                        <v-col cols="12">
-                            <p class="text-h6 mb-2"><strong>Link</strong></p>
-                            <v-text-field
-                                name="title"
-                                hide-details
-                                class="mt-0 pt-0 text-small"
-                                ref="copyUrl"
-                                :value="`${this.$config.baseUrl}/answers/${id}`"
-                                placeholder="Share Link"
-                            />
-                        </v-col>
-                    </v-row>
-                </v-container>
+                <v-row>
+                    <v-col cols="12">
+                        <p class="text-h6 mb-2"><strong>Invite</strong></p>
+                        <Invite :formId="id" />
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="12">
+                        <p class="text-h6 mb-2"><strong>Link</strong></p>
+                        <v-text-field
+                            name="title"
+                            class="mt-0 pt-0 text-small"
+                            ref="copyUrl"
+                            :value="`${this.$config.baseUrl}/answers/${id}`"
+                            placeholder="Share Link"
+                            readonly
+                        />
+                    </v-col>
+                </v-row>
             </v-card-text>
             <v-card-actions>
+                <div class="d-flex align-center">
+                    <v-switch hide-details class="mt-0" v-model="isPublic" />
+                    <label class="ml-3">
+                        <small v-if="isPublic">Semua yang punya link bisa response</small>
+                        <small v-else>Hanya yang di invite yang bisa response</small>
+                    </label>
+                </div>
                 <v-spacer></v-spacer>
                 <v-btn text color="blue darken-1" @click="dialog = false"
                     >Close
                 </v-btn>
                 <v-btn dark outlined color="green darken-1" @click="copyUrl"
-                    >Copy
+                    >{{ labelCopy }}
                 </v-btn>
             </v-card-actions>
         </v-card>
@@ -43,11 +54,14 @@ export default {
     data() {
         return {
             dialog: false,
+            isPublic: false,
+            labelCopy: 'Copy',
         }
     },
     methods: {
         copyUrl() {
             let textToCopy = this.$refs.copyUrl.$el.querySelector('input')
+            this.labelCopy = "Copied !"
             textToCopy.select()
             document.execCommand('copy')
         },
