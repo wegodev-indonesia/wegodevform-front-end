@@ -47,11 +47,6 @@ export default {
             try {
                 const response = await this.$store.dispatch('forms/show', this.formId)
 
-                //check question owner
-                if (response.form.userId !== this.$store.getters['auth/user'].id) {
-                    throw { message: 'FORM_ID_EMPTY' }
-                }
-
                 /* 
                     Get Questions
                     kalau cara yang standard, fetch di dalam QuestionCard, tapi karena disini sudah dapat response form,
