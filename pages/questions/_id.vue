@@ -68,7 +68,10 @@ export default {
 
                 //check question owner
                 if (response.form.userId !== this.$store.getters['auth/user'].id) {
-                    throw { message: 'FORM_ID_EMPTY' }
+                    this.$nuxt.error({
+                        statusCode: 404,
+                        customMessage: this.$i18n.t('ID_NOT_FOUND'),
+                    })
                 }
 
                 /* 
