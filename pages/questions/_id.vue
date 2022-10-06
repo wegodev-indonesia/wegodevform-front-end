@@ -66,14 +66,6 @@ export default {
                     this.formId
                 )
 
-                //check question owner
-                if (response.form.userId !== this.$store.getters['auth/user'].id) {
-                    this.$nuxt.error({
-                        statusCode: 404,
-                        customMessage: this.$i18n.t('ID_NOT_FOUND'),
-                    })
-                }
-
                 /* 
                     Get Questions
                     kalau cara yang standard, fetch di dalam QuestionCard, tapi karena disini sudah dapat response form,

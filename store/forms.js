@@ -8,6 +8,7 @@ export const state = () => ({
     forms: [],
     id: null,
     title: null,
+    public: null,
     description: null
 })
 
@@ -24,6 +25,7 @@ export const mutations = {
         if(form._id){ state.id = form._id }
         if(form.title){ state.title = form.title }
         if(form.description){ state.description = form.description }
+        if(form.public){ state.public = form.public }
     },
     remove(state, formId) {
         state.forms.docs = state.forms.docs.filter(form => form._id !== formId)

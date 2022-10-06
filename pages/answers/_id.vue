@@ -46,7 +46,7 @@ export default {
         async fetch() {
             try {
                 const response = await this.$store.dispatch('forms/show', this.formId)
-
+                
                 /* 
                     Get Questions
                     kalau cara yang standard, fetch di dalam QuestionCard, tapi karena disini sudah dapat response form,

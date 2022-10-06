@@ -29,13 +29,7 @@
                 </v-row>
             </v-card-text>
             <v-card-actions>
-                <div class="d-flex align-center">
-                    <v-switch hide-details class="mt-0" v-model="isPublic" />
-                    <label class="ml-3">
-                        <small v-if="isPublic">Semua yang punya link bisa response</small>
-                        <small v-else>Hanya yang di invite yang bisa response</small>
-                    </label>
-                </div>
+                <SwitchVisibility :formId="id" />
                 <v-spacer></v-spacer>
                 <v-btn text color="blue darken-1" @click="dialog = false"
                     >Close
@@ -54,7 +48,6 @@ export default {
     data() {
         return {
             dialog: false,
-            isPublic: false,
             labelCopy: 'Copy',
         }
     },
