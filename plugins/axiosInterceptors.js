@@ -28,7 +28,7 @@ export default function ({ $axios, redirect, store }) {
         }
 
         //access token expired
-        if(error.response.status == 401){
+        if(error.response.status == 401 && error.response.data.message == 'TOKEN_EXPIRED') {
             if(store.state.auth.refreshToken){
                 //request new token by refreshToken
                 let refreshToken = store.state.auth.refreshToken 
