@@ -16,6 +16,7 @@ export const mutations = {
     reset(state) {
         state.id = null
         state.title = null
+        state.public = null
         state.description = null
     },
     setForms(state, forms) {
