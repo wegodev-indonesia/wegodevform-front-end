@@ -32,5 +32,6 @@
 
     "CANNOT_INVITE_YOUR_SELF": "Anda tidak bisa mengundang diri anda sendiri",
     "EMAIL_INVITED": "Email sudah pernah di undang",
-    "ADD_INVITE_FAILED": "Mengirim undangan gagal"
+    "ADD_INVITE_FAILED": "Mengirim undangan gagal",
+    "YOU_ARE_NOT_INVITED": "Anda harus di undang untuk bisa mengisi form ini"
 }

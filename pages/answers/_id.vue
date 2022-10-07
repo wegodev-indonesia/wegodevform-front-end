@@ -34,19 +34,24 @@ export default {
             }
         }
     },
-    head () {
+    data() {
         return {
-            title: this.$store.state.forms.title,
+            title: null,
+            description: null,
         }
     },
-    computed: {
-        ...mapState('forms', ['id', 'title', 'description']),
+    head () {
+        return {
+            title: this.title,
+        }
     },
     methods: {
         async fetch() {
             try {
-                const response = await this.$store.dispatch('forms/show', this.formId)
-                
+                const response = await this.$store.dispatch('answers/show', this.formId)
+                this.title = response.form.title
+                this.description = response.form.description
+
                 /* 
                     Get Questions
                     kalau cara yang standard, fetch di dalam QuestionCard, tapi karena disini sudah dapat response form,
@@ -73,8 +78,6 @@ export default {
     },
     beforeMount() {
         this.$store.commit('answers/reset')
-    },
-    mounted() {
         this.fetch()
     }
 }

@@ -1,10 +1,10 @@
 <template>
-    <v-container v-if="id">
+    <v-container v-if="form.id">
         <v-row>
             <v-col color="white" md="8" offset-md="2" sm="10" offset-sm="1">
                 <v-card class="mb-3 card-border-top">
                     <v-card-text>
-                        <h1 class="mb-3 mt-2" color="black">{{ title }}</h1>
+                        <h1 class="mb-3 mt-2" color="black">{{ form.title }}</h1>
                         <p>Response kamu sudah tersimpan.</p>
 
                         <v-btn
@@ -13,17 +13,14 @@
                             :ripple="false"
                             class="pl-0"
                             color="primary"
-                            :to="`/answers/${id}`"
+                            :to="`/answers/${form.id}`"
                         >
                             Submit response lainnya
                         </v-btn>
                     </v-card-text>
                 </v-card>
                 <p class="text-center text-mute">
-                    <small
-                        >Content ini dibuat menggunakan
-                        <strong>wegodevform</strong>.</small
-                    >
+                    <small>Content ini dibuat menggunakan<strong>wegodevform</strong>.</small>
                 </p>
             </v-col>
         </v-row>
@@ -37,14 +34,14 @@ export default {
     middleware: ['authenticated'],
     head () {
         return {
-            title: this.$store.state.forms.title,
+            title: this.$store.state.answers.form.title,
         }
     },
     computed: {
-        ...mapState('forms', ['id', 'title', 'description']),
+        ...mapState('answers', ['form']),
     },
     mounted() {
-        if (!this.id) {
+        if (!this.form.id) {
             this.$router.push('/')
         }
     },

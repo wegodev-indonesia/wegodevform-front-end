@@ -5,6 +5,11 @@ const config = {
 }
 
 export const state = () => ({
+    form: {
+        // id
+        // title
+        // description
+    },
     answers: [
         // {
             // questionId : questionId
@@ -15,11 +20,16 @@ export const state = () => ({
 
 export const mutations = {
     reset(state) {
+        state.form = {}
         state.answers = []
+    },
+    setForm(state, form) {
+        state.form.id = form.id
+        state.form.title = form.title
+        state.form.description = form.description
     },
     update(state, payload) {
         //update every answer user made
-
         //check if questionId exist
         const index = state.answers.findIndex(answer => answer.questionId === payload.questionId)
 
@@ -34,6 +44,14 @@ export const mutations = {
 }
 
 export const actions = {
+    async show({commit}, formId) {
+        const response = await this.$axios.$get(`/answers/${formId}`)
+        if(!response) { return false }
+
+        commit('setForm', response.form)
+
+        return response
+    },
     async store({state}, formId) {
         let form = {
             answers: state.answers
