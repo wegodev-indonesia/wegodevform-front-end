@@ -124,6 +124,8 @@ export default {
                     email: email
                 }
                 await this.$store.dispatch('invites/remove', payload)
+
+                this.removeLoading = null
             } catch (err) {
                 if (err.response) {
                     this.$store.commit('alerts/show', {
