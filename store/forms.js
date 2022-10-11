@@ -50,6 +50,14 @@ export const actions = {
 
         return response
     },
+    async showToUser({commit}, id) {
+        const response = await this.$axios.$get(`/forms/${id}/users`)
+        if(!response) { return false }
+        console.log(response)
+        commit('setState', response.form)
+
+        return response
+    },
     async store() {
         const response = await this.$axios.$post(`/forms`)
         if(!response) { return false }

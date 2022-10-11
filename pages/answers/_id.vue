@@ -48,7 +48,7 @@ export default {
     methods: {
         async fetch() {
             try {
-                const response = await this.$store.dispatch('answers/show', this.formId)
+                const response = await this.$store.dispatch('forms/showToUser', this.formId)
                 this.title = response.form.title
                 this.description = response.form.description
 
